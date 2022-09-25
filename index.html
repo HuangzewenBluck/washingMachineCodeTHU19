@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 <head>
-<title>Cross-Browser QRCode generator for Javascript</title>
+<title>南19洗衣机二维码生成</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 <script type="text/javascript" src="jquery.min.js"></script>
@@ -22,8 +22,9 @@
 <button id="btn06_2">十九号楼六楼烘干机</button><br />
 
 <input id="text" type="text" value="收集的数据没有经过检查，使用前请务必确认设备编号正确！" style="width:80%" /><br />
+生成二维码后截图，进入洗衣机小程序扫码即可。
 <div id="qrcode" style="width:200px; height:200px; margin-top:15px;"></div>
-
+使用Cross-Browser QRCode generator for Javascript，感谢。
 <script type="text/javascript">
 var qrcode = new QRCode(document.getElementById("qrcode"), {
 	width : 100,
