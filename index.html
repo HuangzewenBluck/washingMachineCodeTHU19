@@ -21,7 +21,8 @@
 <button id="btn06_1">十九号楼六楼洗衣机</button>
 <button id="btn06_2">十九号楼六楼烘干机</button><br />
 
-<input id="text" type="text" value="收集的数据没有经过检查，使用前请务必确认设备编号正确！" style="width:80%" /><br />
+<input id="text" type="text" value="在此输入设备编号回车，可以自定义二维码" style="width:80%" /><br />
+收集的数据没有经过检查，使用前请务必确认设备编号正确！
 生成二维码后截图，进入洗衣机小程序扫码即可。
 <div id="qrcode" style="width:200px; height:200px; margin-top:15px;"></div>
 使用Cross-Browser QRCode generator for Javascript，感谢。
@@ -38,7 +39,7 @@ function makeCode () {
 		return;
 	}
 	
-	qrcode.makeCode(elText.value);
+	qrcode.makeCode("?code="+elText.value);
 }
 
 makeCode();
@@ -90,5 +91,15 @@ $("#btn06_1").click(function(){
 $("#btn06_2").click(function(){
 	qrcode.makeCode("?code=552743");
 })
+
+$("#text").
+	on("blur", function () {
+		makeCode();
+	}).
+	on("keydown", function (e) {
+		if (e.keyCode == 13) {
+			makeCode();
+		}
+	});
 </script>
 </body>
